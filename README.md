@@ -2,11 +2,11 @@
 
 Required modules:
 
-win32 - pip install pywin32
-PIL - pip install Pillow
-tkinter
-string
-random
-os
-qrcode
+win32 - pip install pywin32,
+PIL - pip install Pillow,
+tkinter,
+string,
+random,
+os,
+qrcode,
 pyzbar
