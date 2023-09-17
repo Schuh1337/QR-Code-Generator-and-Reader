@@ -13,7 +13,7 @@ class QRCodeApp:
     def __init__(self, root):
         self.root = root
         self.root.title("QR Code Creator and Reader")
-        self.root.geometry("600x400")
+        self.root.geometry("500x405")
         self.root.resizable(width=False, height=False)
         self.root.configure(bg="#333")
         self.create_qr_label = tk.Label(root, text="Create QR Code", font=("Helvetica", 16), bg="#333", fg="white")
@@ -32,6 +32,10 @@ class QRCodeApp:
     def create_qr(self):
         data = self.text_entry.get()
         if data:
+            if len(data) > 1000:
+                self.show_save_location("ERROR: Text is too long for QR code")
+                return
+
             qr = qrcode.QRCode(
                 version=1,
                 error_correction=qrcode.constants.ERROR_CORRECT_L,
@@ -52,6 +56,8 @@ class QRCodeApp:
 
             self.create_button.config(text="QR Code Created and Saved")
             self.root.after(3000, self.reset_create_button_text)
+        else:
+            self.show_save_location("No text provided.")
 
     def show_save_location(self, filename):
         self.save_info_label.config(text=f"QR code saved at:\n{filename}")
