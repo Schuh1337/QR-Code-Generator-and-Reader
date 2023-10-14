@@ -2,8 +2,8 @@
 
 Required Modules:
 
-win32 - pip install pywin32,
-PIL - pip install Pillow,
+win32,
+pillow,
 tkinter,
 string,
 random,
