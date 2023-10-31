@@ -2,11 +2,4 @@
 
 Required Modules:
 
-win32,
-pillow,
-tkinter,
-string,
-random,
-os,
-qrcode,
-pyzbar
+win32, pillow, tkinter, qrcode, pyzbar
