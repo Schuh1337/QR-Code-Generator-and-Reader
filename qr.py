@@ -1,13 +1,7 @@
-import tkinter as tk
-import qrcode
-import os
-import random
-import string
+import tkinter as tk, qrcode, os, random, string, win32gui, win32con
 from tkinter import filedialog
 from PIL import Image
 from pyzbar.pyzbar import decode
-import win32gui
-import win32con
 
 class QRCodeApp:
     def __init__(self, root):
